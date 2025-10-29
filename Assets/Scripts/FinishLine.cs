@@ -14,8 +14,9 @@ public class FinishLine : MonoBehaviour
         {
             //Debug.Log("You reached the finish line!");
 
+            FindObjectOfType<PlayerController>().DisableControls();
             finishEffect.Play();
-
+            GetComponent<AudioSource>().Play();
             //Takes a string as the method name, so prone to mistakes
             Invoke("ReloadScene", loadDelay);
         }
